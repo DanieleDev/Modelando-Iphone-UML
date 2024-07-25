@@ -1,29 +1,30 @@
 ### Modelagem e Diagramação de um Componente iPhone
 
+
 ```mermaid
 classDiagram
     interface ReprodutorMusical {
         + tocar()
         + pausar()
-        +selecionarMusica(String musica)
+        + selecionarMusica(String musica)
     }
 
     interface AparelhoTelefonico {
-        + ligar(String numero) 
+        + ligar(String contato)
         + atender()
         + iniciarCorreioVoz()
     }
 
     interface NavegadorInternet {
-        +exibirPagina(String url)
-        +adicionarNovaAba()
-        +atualizarPagina()
+        + exibirPagina(url: String)
+        + adicionarNovaAba()
+        + atualizarPagina()
     }
 
     class iPhone {
     }
 
-    iPhone --> ReprodutorMusical
-    iPhone --> AparelhoTelefonico
-    iPhone --> NavegadorInternet
+    iPhone ..|> ReprodutorMusical
+    iPhone ..|> AparelhoTelefonico
+    iPhone ..|> NavegadorInternet
 ```
